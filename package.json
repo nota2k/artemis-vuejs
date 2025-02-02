@@ -1,0 +1,26 @@
+{
+  "name": "artemis-vuejs",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@vueuse/core": "^10.7.0",
+    "@vueuse/motion": "^2.0.0",
+    "axios": "^1.6.7",
+    "defu": "^6.1.3",
+    "oh-vue-icons": "^1.0.0-rc3",
+    "pinia": "^2.1.7",
+    "vue": "^3.3.8",
+    "vue-body-class": "^3.0.2",
+    "vue-router": "^4.2.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.5.0",
+    "vite": "^5.0.0"
+  }
+}

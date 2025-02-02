@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "title": "Title 1",
+    "artist": "Artist 1",
+    "year": 2010,
+    "genre": "Abstract",
+    "price": 400,
+    "cover": "new-piece-4.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Title 2",
+    "artist": "Artist 2",
+    "year": 2023,
+    "genre": "Abstract",
+    "price": 1200,
+    "cover": "new-piece-2.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Title 3",
+    "artist": "Artist 3",
+    "year": 2022,
+    "genre": "Photography",
+    "price": 400,
+    "cover": "new-piece-8.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Title 4",
+    "artist": "Artist 4",
+    "year": 2018,
+    "genre": "Photography",
+    "price": 400,
+    "cover": "new-piece-3.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Title 5",
+    "artist": "Artist 5",
+    "year": 2018,
+    "genre": "Abstract",
+    "price": 400,
+    "cover": "new-piece-6.jpg"
+  }
+]

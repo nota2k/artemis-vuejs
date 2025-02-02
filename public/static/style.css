@@ -1,0 +1,557 @@
+
+
+/*
+
+1-General
+2-Header
+3-Main
+4-Footer
+5-Media
+
+*/
+
+
+/*---- 1.General ----*/
+:root{
+  --blue:#082ad9;
+  --blue-dark:#0D1B69;
+}
+
+body,html{
+  margin: 0;
+  min-height: 100vh;
+  position: relative;
+}
+
+/*--- 1.1 Fonts ---*/
+
+@font-face{
+  font-family: 'Lucette';
+  src:
+    local("Lucette"),
+    url("assets/fonts/Lucette-Regular.ttf") format("truetype") tech(color-COLRv1),
+}
+
+@font-face{
+  font-family: 'Hellplague';
+  src:
+    local("Hellplague"),
+    url("assets/fonts/hellplague.otf") format("opentype") tech(color-COLRv1),
+}
+
+@font-face{
+  font-family: 'Maghfirea';
+  src:
+    local("Maghfirea"),
+    url("assets/fonts/Maghfirea.otf") format("opentype") tech(color-COLRv1),
+}
+
+@font-face{
+  font-family: 'Mile Heights';
+  src:
+    local("Mile Heights"),
+    url("assets/fonts/MileHeights.otf") format("opentype") tech(color-COLRv1),
+}
+
+@font-face{
+  font-family: 'SF Mono';
+  src:
+    local("SF Mono"),
+    url("assets/fonts/SFMono-Regular.otf") format("opentype") tech(color-COLRv1),
+}
+
+@font-face{
+  font-family: 'Aker Brygge Display';
+  src:
+    local("Aker Brygge Display"),
+    url("assets/fonts/Aker-brygge-display.ttf") format("truetype") tech(color-COLRv1),
+}
+
+p{
+  margin: 0;
+  font-family: SF Mono;
+  color: var(--blue-dark);
+}
+
+h1{
+  font-family: Hellplague;
+  font-size: 5rem;
+  color:var(--blue);
+  margin: 0;
+}
+
+hr{
+  color: var(--blue);
+  margin: 0;
+  width: 100%;
+  border-width: 0.01rem;
+}
+
+li{
+  list-style: none;
+  font-family: SF Mono;
+}
+
+/*--- 1.2 Links ---*/
+
+a{
+  text-decoration: none;
+  color: inherit;
+  font-family: SF Mono;
+  line-height: 1.2em;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+a:visited{
+  color:inherit;
+}
+
+/*--- 1.3 Buttons ---*/
+button{
+  background-color:var(--blue);
+  
+  border: none;
+  display: flex;
+  padding: 0.625rem 1.25rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button.blue{
+  background-color:var(--blue);
+  color: white;
+}
+
+button.white{
+  background-color:white;
+  color:var(--blue-dark);
+}
+
+button.white .icon{
+  color:var(--blue);
+}
+.icon{
+  max-width: 30px;
+}
+/*---- 2.Header ----*/
+
+header{
+  width: 100%;
+  border-bottom: 1px solid var(--blue);
+}
+
+.header-wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.8em;
+  box-sizing: border-box;
+}
+
+/*--- 2.1 Navigation ---*/
+.nav-mini{
+  position: relative;
+  z-index: 1000;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  cursor: pointer;
+}
+
+.line{
+  border-radius: 3px;
+  width: 50px;
+  height: 3px;
+  background-color: var(--blue);
+  display: block;
+/*  margin: 8px auto;*/
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-mini.is-active .line:nth-child(1){
+  width: 30px;
+}
+
+.nav-mini.is-active .line:nth-child(2){
+  width: 40px;
+}
+
+.nav-mini.is-active .line{
+  -webkit-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  -o-transform: rotate(30deg);
+  transform: rotate(30deg);
+  background-color:white;
+}
+
+body.is-full-nav{
+  height: 100%;
+  overflow: hidden;
+}
+
+.menu-full{
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color:var(--blue);
+  top: 0;
+  left: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-full.is-open{
+  visibility: visible;
+  color:white;
+  opacity: 1;
+}
+
+.full-nav{
+  position: relative;
+  top:30%;
+  display: flex;
+  flex-wrap: wrap;
+  gap:20px;
+  font-size: 4rem;
+  max-width: 750px;  
+}
+
+.menu-item{
+  text-transform: uppercase;
+  font-weight: 300;
+  filter: blur(3px);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.menu-item:hover{
+  filter: blur(0px);
+}
+
+/*---- 3.Main ----*/
+
+main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/*--- 3.1 Home ---*/
+
+.landing{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.landing .container{
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  margin: 0 auto;
+  gap: 40px;
+  height: 100%;
+}
+
+.landing .block-hero{
+  border:2px solid var(--blue);
+  width: 300px;
+  height: 80vh;
+  max-height: 500px;
+}
+
+.slogan-wrapper{
+  max-width: 523px;
+}
+.slogan-wrapper *{
+  display: inline-block;
+}
+
+.slogan-block{
+  background-color: var(--blue);
+  font-family: 'Mile Heights'!important;
+  color:white;
+  margin: 0;
+  padding: 0.4rem;
+  font-size: 6.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+/*Sections*/
+.grid{
+  display: grid;
+  width: calc(100% - 90px);
+}
+
+.grid.column-7{
+  grid-template-columns: repeat(7,1fr);
+  gap:30px;
+  margin:0 auto; 
+}
+
+.news .cat-wrapper{
+  writing-mode: sideways-lr;
+  text-align: right;
+}
+
+.cat-title{
+  font-family: Aker Brygge Display;
+  font-size: 4.288rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.news .card{
+  display: flex;
+  border: 3px solid var(--blue);
+  height: fit-content;
+}
+
+#card01{
+  grid-column: 2 / span 4;
+}
+
+#card02{
+  grid-column: 6 / span 2;
+  align-self: end;
+}
+
+#card03{
+  grid-column: 2 / span 3;
+/*  align-self: end;*/
+}
+
+.two-cards{
+  grid-column: 5 / span 3;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+#card05{
+  width: 70.4%;
+}
+
+.news button{
+  grid-column: 2 / span 2;
+/*  grid-row-start: 2;*/
+}
+
+.news .card-wrapper{
+  display: flex;
+  width: 100%;
+  height: min-content;
+  padding: 2rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.card-wrapper .info-piece{
+  display: flex;
+  padding: 0.9375rem 1.875rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.625rem;
+  border: 2px solid var(--blue);
+  width: -moz-available;
+  flex-grow: 2;
+}
+
+.info-piece .title{
+  font-family: Lucette;
+  font-style: italic;
+}
+
+.info-piece hr{
+  width: 30%;
+}
+
+.join-us{
+  display: flex;
+  background-image: url(assets/img/noise-bg.png);
+  background-size: cover;
+  border: 4px solid var(--blue);
+}
+
+.join-us .flex-2{
+  width: calc(100% / 2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5.125rem 4.8125rem 5.0625rem 4.875rem;
+}
+
+.join-us .flex-2 .container{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.join-us .flex-2:nth-child(2){
+  background-color: white;
+  color: var(--blue);
+  font-family: Lucette;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2rem; /* 170.833% */
+}
+
+.join-us h2{
+  font-family: Maghfirea;
+  color: white;
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.our-vision .container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+/*  max-width: 70%;*/
+  margin: 8rem auto;
+  position: relative;
+}
+
+.our-vision .img-wrapper{
+  width: 36.0625rem;
+  height: 48.125rem;
+}
+
+.our-vision #img01{
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: 48.125rem;
+  z-index: -2;
+}
+
+.our-vision #img01::after{
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  background: linear-gradient(0deg, rgba(44, 74, 230, 0.56) 0%, rgba(44, 74, 230, 0.56) 100%);
+  mix-blend-mode: lighten;
+}
+
+.our-vision #img01 img{
+  object-position: center;
+  opacity: 0.7;
+  height: 100%;
+}
+
+.our-vision #img02{
+  overflow: hidden;
+  width: 25.125rem;
+  height: 24.8125rem;
+}
+
+.our-vision #img02 img{
+  object-position: center;
+}
+
+.our-vision .block-text{
+  width: 607px;
+  margin-left: -38px;
+}
+
+.our-vision p{
+  color: #11258C;
+  font-family: SF Mono;
+  font-size: 1.3em;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 141.4%; /* 42.42px */
+}
+
+.our-vision h2{
+  font-family: Maghfirea;
+  color: var(--blue);
+  font-size: 8rem;
+  margin: 0 0 30px 0;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.24375rem;
+  text-transform: uppercase;
+}
+/*Section - News*/
+
+/*---- 4.Footer ----*/
+
+footer{
+  display: flex;
+  background-color: var(--blue);
+  width: 100%;
+  height: 31.5625rem;
+  justify-content: center;
+  align-items: center;
+  color:white;
+}
+
+.footer-wrapper{
+  display: flex;
+  justify-content: space-between;
+  max-width: 70%;
+  width: 100%;
+}
+
+.footer-wrapper .column{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color:white;
+  width: 16.9375rem;
+  height: 16rem;
+/*  gap: 10px;*/
+}
+
+.footer-wrapper .nav-cat{
+  color:white;
+  font-family: Lucette,sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2.5rem;
+  width: 100%;
+  border-bottom: 1px solid white;
+  margin: 0;
+  line-height: 2em;
+}
+
+/*---- 5.Media ----*/
+
+img{
+  width: 100%;
+  height: auto;
+}
